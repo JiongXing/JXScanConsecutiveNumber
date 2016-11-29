@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		944520F71DED2D240091FFA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 944520F61DED2D240091FFA4 /* main.m */; };
-		944520FF1DED2D320091FFA4 /* NSString+JXScanConsecutiveNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 944520FE1DED2D320091FFA4 /* NSString+JXScanConsecutiveNumber.m */; };
+		944521031DED54A60091FFA4 /* NSString+JXScanConsecutiveNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 944521021DED54A60091FFA4 /* NSString+JXScanConsecutiveNumber.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +26,8 @@
 /* Begin PBXFileReference section */
 		944520F31DED2D240091FFA4 /* JXScanConsecutiveNumberDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JXScanConsecutiveNumberDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		944520F61DED2D240091FFA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		944520FD1DED2D320091FFA4 /* NSString+JXScanConsecutiveNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JXScanConsecutiveNumber.h"; sourceTree = "<group>"; };
-		944520FE1DED2D320091FFA4 /* NSString+JXScanConsecutiveNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXScanConsecutiveNumber.m"; sourceTree = "<group>"; };
+		944521011DED54A60091FFA4 /* NSString+JXScanConsecutiveNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JXScanConsecutiveNumber.h"; sourceTree = "<group>"; };
+		944521021DED54A60091FFA4 /* NSString+JXScanConsecutiveNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXScanConsecutiveNumber.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +61,18 @@
 			isa = PBXGroup;
 			children = (
 				944520F61DED2D240091FFA4 /* main.m */,
-				944520FD1DED2D320091FFA4 /* NSString+JXScanConsecutiveNumber.h */,
-				944520FE1DED2D320091FFA4 /* NSString+JXScanConsecutiveNumber.m */,
+				944521001DED54A50091FFA4 /* JXScanConsecutiveNumber */,
 			);
 			path = JXScanConsecutiveNumberDemo;
+			sourceTree = "<group>";
+		};
+		944521001DED54A50091FFA4 /* JXScanConsecutiveNumber */ = {
+			isa = PBXGroup;
+			children = (
+				944521011DED54A60091FFA4 /* NSString+JXScanConsecutiveNumber.h */,
+				944521021DED54A60091FFA4 /* NSString+JXScanConsecutiveNumber.m */,
+			);
+			path = JXScanConsecutiveNumber;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944520FF1DED2D320091FFA4 /* NSString+JXScanConsecutiveNumber.m in Sources */,
+				944521031DED54A60091FFA4 /* NSString+JXScanConsecutiveNumber.m in Sources */,
 				944520F71DED2D240091FFA4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +260,7 @@
 				944520FC1DED2D240091FFA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
