@@ -1,6 +1,6 @@
 # JXScanConsecutiveNumber
 
-[扫描找出字符串中的连续数字](http://www.jianshu.com/p/f60f2c784189)
+[《扫描找出字符串中的连续数字》](http://www.jianshu.com/p/f60f2c784189)
 
 
 # 给NSString写个分类
