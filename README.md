@@ -16,7 +16,7 @@
 # 简单使用
 分别测试字母和数字混合与不混合的几种情况
 ```objectivec
-// test1
+        // test1
         NSLog(@"----- test1: -----");
         NSString *string = @"Hello132634523-345336World65434223";
         NSMutableArray<NSString *> *array = [string scanConsecutiveNumber];
