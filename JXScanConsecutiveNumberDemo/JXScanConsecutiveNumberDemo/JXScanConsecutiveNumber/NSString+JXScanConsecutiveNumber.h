@@ -10,7 +10,7 @@
 
 @interface NSString (JXScanConsecutiveNumber)
 
-/// 扫描连续的数字。返回多段连续的数字，没有数字则返回nil。
-- (nullable NSMutableArray<NSString *> *)scanConsecutiveNumber;
+/// 扫描字符串中的连续数字。每扫描完成一段数字，就回调一次。
+- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *numberString, BOOL isLast))callback;
 
 @end

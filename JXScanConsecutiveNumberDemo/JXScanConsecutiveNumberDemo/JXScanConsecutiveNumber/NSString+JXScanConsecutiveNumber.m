@@ -35,4 +35,31 @@
     return array.count > 0 ? array : nil;
 }
 
+- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *, BOOL))callback {
+    if (!callback) {
+        return;
+    }
+    
+    NSMutableString *numberString = nil;
+    
+    for (NSInteger index = 0; index < self.length; ++index) {
+        unichar ch = [self characterAtIndex:index];
+        if (isnumber(ch)) {
+            if (!numberString) {
+                numberString = [NSMutableString string];
+            }
+            [numberString appendString:[self substringWithRange:NSMakeRange(index, 1)]];
+        }
+        else {
+            if (numberString) {
+                callback(numberString, NO);
+                numberString = nil;
+            }
+        }
+    }
+    if (numberString) {
+        callback(numberString, YES);
+    }
+}
+
 @end
