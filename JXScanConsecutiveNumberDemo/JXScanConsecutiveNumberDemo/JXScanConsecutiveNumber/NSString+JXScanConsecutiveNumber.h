@@ -11,6 +11,6 @@
 @interface NSString (JXScanConsecutiveNumber)
 
 /// 扫描字符串中的连续数字。每扫描完成一段数字，就回调一次。
-- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *numberString, BOOL isLast, BOOL *stop))callback;
+- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *numberString, NSRange range, BOOL isLast, BOOL *stop))callback;
 
 @end

@@ -10,12 +10,13 @@
 
 @implementation NSString (JXScanConsecutiveNumber)
 
-- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *, BOOL, BOOL *))callback {
+- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *, NSRange, BOOL, BOOL *))callback {
     if (!callback) {
         return;
     }
     
     NSMutableString *numberString = nil;
+    NSInteger loc = 0;
     BOOL stop = NO;
     
     for (NSInteger index = 0; index < self.length; ++index) {
@@ -23,12 +24,13 @@
         if (isnumber(ch)) {
             if (!numberString) {
                 numberString = [NSMutableString string];
+                loc = index;
             }
             [numberString appendString:[self substringWithRange:NSMakeRange(index, 1)]];
         }
         else {
             if (numberString) {
-                callback(numberString, NO, &stop);
+                callback(numberString, NSMakeRange(loc, numberString.length), NO, &stop);
                 numberString = nil;
                 if (stop) {
                     break;
@@ -37,7 +39,7 @@
         }
     }
     if (numberString) {
-        callback(numberString, YES, &stop);
+        callback(numberString, NSMakeRange(loc, numberString.length), YES, &stop);
     }
 }
 
