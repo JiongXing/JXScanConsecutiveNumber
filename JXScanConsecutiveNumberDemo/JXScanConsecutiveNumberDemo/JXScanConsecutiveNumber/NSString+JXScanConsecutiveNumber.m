@@ -10,37 +10,13 @@
 
 @implementation NSString (JXScanConsecutiveNumber)
 
-- (NSMutableArray<NSString *> *)scanConsecutiveNumber {
-    NSMutableArray<NSString *> *array = [NSMutableArray array];
-    NSMutableString *numberString = nil;
-    
-    for (NSInteger index = 0; index < self.length; ++index) {
-        unichar ch = [self characterAtIndex:index];
-        if (isnumber(ch)) {
-            if (!numberString) {
-                numberString = [NSMutableString string];
-            }
-            [numberString appendString:[self substringWithRange:NSMakeRange(index, 1)]];
-        }
-        else {
-            if (numberString) {
-                [array addObject:numberString];
-                numberString = nil;
-            }
-        }
-    }
-    if (numberString) {
-        [array addObject:numberString];
-    }
-    return array.count > 0 ? array : nil;
-}
-
-- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *, BOOL))callback {
+- (void)jx_scanConsecutiveNumberWithCallback:(void (^)(NSString *, BOOL, BOOL *))callback {
     if (!callback) {
         return;
     }
     
     NSMutableString *numberString = nil;
+    BOOL stop = NO;
     
     for (NSInteger index = 0; index < self.length; ++index) {
         unichar ch = [self characterAtIndex:index];
@@ -52,13 +28,16 @@
         }
         else {
             if (numberString) {
-                callback(numberString, NO);
+                callback(numberString, NO, &stop);
                 numberString = nil;
+                if (stop) {
+                    break;
+                }
             }
         }
     }
     if (numberString) {
-        callback(numberString, YES);
+        callback(numberString, YES, &stop);
     }
 }
 
